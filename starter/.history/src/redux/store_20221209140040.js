@@ -1,0 +1,1 @@
+import {cnfgStre} from '@reduxjs/toolkit'
