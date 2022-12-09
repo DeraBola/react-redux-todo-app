@@ -10,7 +10,7 @@ const TodoItem = ({ id, title, completed }) => {
   };
 
   const handleDeleteClick = () =>{
-    dispatch(deleteTodo({id: id}))
+    
   }
 
   return (
@@ -28,7 +28,7 @@ const TodoItem = ({ id, title, completed }) => {
           ></input>
           {title}
         </span>
-        <button onClick={handleDeleteClick} className="btn btn-danger">Delete</button>
+        <button className="btn btn-danger">Delete</button>
       </div>
     </li>
   );

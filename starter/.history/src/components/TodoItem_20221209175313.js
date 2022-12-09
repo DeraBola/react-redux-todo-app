@@ -9,9 +9,7 @@ const TodoItem = ({ id, title, completed }) => {
     dispatch(toggleComplete({ id: id, completed: !completed }));
   };
 
-  const handleDeleteClick = () =>{
-    dispatch(deleteTodo({id: id}))
-  }
+  const handleDeleteClick = 
 
   return (
     <li
@@ -28,7 +26,7 @@ const TodoItem = ({ id, title, completed }) => {
           ></input>
           {title}
         </span>
-        <button onClick={handleDeleteClick} className="btn btn-danger">Delete</button>
+        <button className="btn btn-danger">Delete</button>
       </div>
     </li>
   );
