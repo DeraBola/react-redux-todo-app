@@ -39,10 +39,10 @@ const todoSlice = createSlice({
     },
     extraReducers: {
         [getTodosAsync.pending]: (state, action) =>{
-            console.log('fetching data...');
+            console.log('fetching data...')
         },
         [getTodosAsync.fulfilled]: (state, action) => {
-            console.log('fetched data successfully...');
+            console.log('fetched data successfully...')
             return action.payload.todos;
         },
     },

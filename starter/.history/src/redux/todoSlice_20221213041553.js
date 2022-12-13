@@ -1,15 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const getTodosAsync = createAsyncThunk(
-    'todos/getTodosAsync',
-async () => {
+const getTodosAsync = createAsyncThunk('todos/getTodoAsync',
+async() =>{
 const response = await fetch('http://localhost:7000/todos');
 if(response.ok){
-    const todos = await response.json();
-    return { todos }
+    const td
 }
-}
-);
+})
 
 const todoSlice = createSlice({
     name: "todos",
@@ -35,16 +32,7 @@ const todoSlice = createSlice({
        },
        deleteTodo: (state, action) => {
            return state.filter((todo)=> todo.id !== action.payload.id)
-       },
-    },
-    extraReducers: {
-        [getTodosAsync.pending]: (state, action) =>{
-            console.log('fetching data...');
-        },
-        [getTodosAsync.fulfilled]: (state, action) => {
-            console.log('fetched data successfully...');
-            return action.payload.todos;
-        },
+       }
     },
 });
 

@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const getTodosAsync = createAsyncThunk(
     'todos/getTodosAsync',
 async () => {
-const response = await fetch('http://localhost:7000/todos');
+const response = await fetch('https://localhost:7000/todos');
 if(response.ok){
     const todos = await response.json();
     return { todos }
@@ -37,15 +37,11 @@ const todoSlice = createSlice({
            return state.filter((todo)=> todo.id !== action.payload.id)
        },
     },
-    extraReducers: {
-        [getTodosAsync.pending]: (state, action) =>{
-            console.log('fetching data...');
-        },
-        [getTodosAsync.fulfilled]: (state, action) => {
-            console.log('fetched data successfully...');
+    extraReducers:{
+        [getTodosAsync.fulfilled]:(state, action) =>{
             return action.payload.todos;
-        },
-    },
+        }
+    }
 });
 
 export const { 

@@ -16,7 +16,7 @@ useEffect(() => {
 	return (
 		<ul className='list-group' >
 			{todos.map((todo) => (
-				<TodoItem  
+				<TodoItem key={id}
 				id={todo.id} 
 				title={todo.title} 
 				completed={todo.completed} 
