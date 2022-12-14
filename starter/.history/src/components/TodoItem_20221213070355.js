@@ -10,7 +10,7 @@ const TodoItem = ({ id, title, completed }) => {
   };
 
   const handleDeleteClick = () =>{
-    dispatch(deleteTodoAsync({id: id}))
+    dispatch(deleteTodo({id: id}))
   }
 
   return (

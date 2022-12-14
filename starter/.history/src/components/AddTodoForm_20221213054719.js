@@ -10,7 +10,7 @@ const AddTodoForm = () => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		dispatch(
-			addTodoAsync ({
+			addTodo({
 				title: value,
 			})
 		)

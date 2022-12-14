@@ -53,6 +53,7 @@ export const deleteTodoAsync = createAsyncThunk(
             method: "DELETE",          
           });
           if(response.ok) {
+            const todo = await response.json();
             return {   id: payload.id };
         } 
         }       

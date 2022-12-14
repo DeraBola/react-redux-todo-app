@@ -50,10 +50,15 @@ export const deleteTodoAsync = createAsyncThunk(
     "todos/deleteTodoAsync",
     async (payload) => {
         const response = await fetch(`http://localhost:7000/todos/${payload.id}`, {
-            method: "DELETE",          
+            method: "DELETE",
+            headers:{
+                "Content-Type":"application/json",
+            },   
+            body:JSON.stringify({deleted: payload.id})    
           });
           if(response.ok) {
-            return {   id: payload.id };
+            const todo = await response.json();
+            return { id: todo.id };
         } 
         }       
 );
